@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>SportPro - Boutique</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">SPORT<span class="red">PRO</span></div>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="musculation.html">Musculation</a>
+        <a href="football.html">Football</a>
+        <a href="boutique.html">Boutique</a>
+    </nav>
+</header>
+
+<section class="content">
+    <h2>Boutique</h2>
+
+    <div class="card">
+        <h3>Maillot Elite</h3>
+        <p>49€</p>
+        <button onclick="addToCart('Maillot Elite',49)">Ajouter</button>
+    </div>
+
+    <div class="card">
+        <h3>Haltères Pro</h3>
+        <p>79€</p>
+        <button onclick="addToCart('Haltères Pro',79)">Ajouter</button>
+    </div>
+
+    <h3>Panier</h3>
+    <ul id="cart"></ul>
+    <p>Total : <span id="total">0</span> €</p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
