@@ -3,26 +3,88 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SportPro - Accueil - Partenaire officiel Basic Fit">
 <title>SportPro - Accueil</title>
 <link rel="stylesheet" href="style.css">
+<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=EUR"></script>
 </head>
 <body>
-
-<header>
-    <div class="logo">SPORT<span class="red">PRO</span></div>
-    <nav>
-        <a href="index.html">Accueil</a>
-        <a href="musculation.html">Musculation</a>
-        <a href="football.html">Football</a>
-        <a href="boutique.html">Boutique</a>
-    </nav>
+<header id="site-header">
+  <div class="logo"><a href="index.html" style="text-decoration:none;color:inherit;">SPORT<span class="red">PRO</span></a></div>
+  <button class="hamburger" id="hamburger-btn" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div class="nav-overlay" id="nav-overlay" onclick="closeMenu()"></div>
+  <nav id="main-nav">
+    <a href="index.html">Accueil</a>
+    <a href="musculation.html">Musculation</a>
+    <a href="football.html">Football</a>
+    <a href="apropos.html">A propos</a>
+    <a href="conseils.html">Conseils</a>
+    <a href="boutique.html">Boutique</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 </header>
 
 <section class="hero">
-    <h1>Bienvenue sur SportPro</h1>
-    <p>Performance. Discipline. Résultats.</p>
+  <h1>Bienvenue sur<br><span>SportPro</span></h1>
+  <p>Performance. Discipline. Résultats.</p>
+  <div class="hero-btns">
+    <button class="btn btn-red" onclick="showPage('boutique')">Voir la boutique</button>
+    <button class="btn btn-outline" onclick="showPage('muscu')">Nos programmes</button>
+  </div>
 </section>
-<img src="https://www.bing.com/th/id/OIP.qhcRx6ocewKyIX9v6eDkgwHaHY?w=189&h=211&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="Description de l'image" width="900" height="900">
+
+<section class="content">
+  <p class="section-label">Pourquoi SportPro ?</p>
+  <h2 class="section-title">Tout pour performer</h2>
+  <div class="grid grid-4">
+    <div class="info-card"><div class="icon">🏋️</div><h3>Musculation</h3><p>Programmes structurés pour la prise de masse, la force et le cardio. Tous niveaux.</p></div>
+    <div class="info-card"><div class="icon">⚽</div><h3>Football</h3><p>Technique, explosivité, préparation physique et mentalité gagnante.</p></div>
+    <div class="info-card"><div class="icon">🛒</div><h3>Boutique</h3><p>Maillots, équipements et abonnements premium pour sportifs exigeants.</p></div>
+    <div class="info-card"><div class="icon">🤝</div><h3>Basic Fit</h3><p>Partenaire officiel. Accède à nos programmes dans ta salle Basic Fit.</p></div>
+  </div>
+  <div class="bf-banner">
+    <div>
+      <h2>Partenaire <span>Basic Fit</span></h2>
+      <p>Nos coaches certifiés interviennent dans les salles Basic Fit de toute la France. Présente ton abonnement SportPro à l'accueil pour des avantages exclusifs.</p>
+      <button class="btn btn-red" onclick="showPage('boutique')">Prendre un abonnement</button>
+    </div>
+    <div class="bf-big-icon">🏟️</div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label">Ils nous font confiance</p>
+    <h2 class="section-title light">Avis clients</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"En 3 mois avec le programme musculation SportPro, j'ai pris 6kg de muscle. Le suivi en Basic Fit est top, le coach est vraiment investi."</p>
+        <div class="testi-author"><div class="testi-avatar">K</div><div><div class="testi-name">Kevin M.</div><div class="testi-sub">Programme Masse – Paris</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Je joue en D2 amateur et grâce au programme football SportPro, j'ai explosé mes stats cette saison. Indispensable pour progresser."</p>
+        <div class="testi-author"><div class="testi-avatar">A</div><div><div class="testi-name">Amine B.</div><div class="testi-sub">Programme Football – Lyon</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★☆</div>
+        <p class="testi-text">"L'abonnement Elite vaut vraiment le coup. Coach dédié, accès Basic Fit illimité, suivi nutritionnel... Tout est inclus pour performer."</p>
+        <div class="testi-author"><div class="testi-avatar">S</div><div><div class="testi-name">Sarah L.</div><div class="testi-sub">Abonnement Elite – Marseille</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<!-- ══════════════ PAGE MUSCULATION ══════════════ -->
+</div>
+</div>
+
+<button id="back-to-top" aria-label="Retour en haut">&#8679;</button>
+<div id="toast-container"></div>
+
 <script src="script.js"></script>
 </body>
 </html>
