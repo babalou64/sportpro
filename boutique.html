@@ -1,41 +1,172 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SportPro - Boutique - Partenaire officiel Basic Fit">
 <title>SportPro - Boutique</title>
 <link rel="stylesheet" href="style.css">
+<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=EUR"></script>
 </head>
 <body>
-
-<header>
-    <div class="logo">SPORT<span class="red">PRO</span></div>
-    <nav>
-        <a href="index.html">Accueil</a>
-        <a href="musculation.html">Musculation</a>
-        <a href="football.html">Football</a>
-        <a href="boutique.html">Boutique</a>
-    </nav>
+<header id="site-header">
+  <div class="logo"><a href="index.html" style="text-decoration:none;color:inherit;">SPORT<span class="red">PRO</span></a></div>
+  <button class="hamburger" id="hamburger-btn" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div class="nav-overlay" id="nav-overlay" onclick="closeMenu()"></div>
+  <nav id="main-nav">
+    <a href="index.html">Accueil</a>
+    <a href="musculation.html">Musculation</a>
+    <a href="football.html">Football</a>
+    <a href="apropos.html">A propos</a>
+    <a href="conseils.html">Conseils</a>
+    <a href="boutique.html">Boutique</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 </header>
 
 <section class="content">
-    <h2>Boutique</h2>
+  <p class="section-label">Nos produits & services</p>
+  <h2 class="section-title">Boutique</h2>
 
-    <div class="card">
-        <h3>Maillot Elite</h3>
-        <p>49€</p>
-        <button onclick="addToCart('Maillot Elite',49)">Ajouter</button>
+  <div class="shop-filters">
+    <input type="text" class="search-bar" placeholder="🔍  Rechercher un produit..." oninput="filterProducts(this.value)">
+    <button class="filter-btn active" onclick="filterCategory('all',this)">Tout</button>
+    <button class="filter-btn" onclick="filterCategory('abonnement',this)">Abonnements</button>
+    <button class="filter-btn" onclick="filterCategory('programme',this)">Programmes</button>
+    <button class="filter-btn" onclick="filterCategory('equipement',this)">Équipements</button>
+  </div>
+
+  <div class="shop-grid" id="shop-grid">
+    <div class="product-card" data-category="abonnement" data-name="abonnement starter">
+      <img class="product-img" src="https://picsum.photos/seed/gym1/400/200" alt="Starter">
+      <div class="product-body">
+        <div class="product-category">Abonnement</div>
+        <div class="product-name">Starter</div>
+        <p class="product-desc">2 programmes + 1 session coach/mois en Basic Fit</p>
+        <div class="product-footer">
+          <div class="product-price">19€<small>/mois</small></div>
+          <button class="btn btn-red" style="padding:9px 18px;font-size:12px" onclick="addToCart('Abonnement Starter',19)">Ajouter</button>
+        </div>
+      </div>
     </div>
-
-    <div class="card">
-        <h3>Haltères Pro</h3>
-        <p>79€</p>
-        <button onclick="addToCart('Haltères Pro',79)">Ajouter</button>
+    <div class="product-card" data-category="abonnement" data-name="abonnement pro">
+      <img class="product-img" src="https://picsum.photos/seed/gym2/400/200" alt="Pro">
+      <div class="product-body">
+        <div class="product-category">Abonnement</div>
+        <div class="product-name">Pro</div>
+        <p class="product-desc">Programmes illimités + 4 sessions/mois + suivi nutritionnel</p>
+        <div class="product-footer">
+          <div class="product-price">39€<small>/mois</small></div>
+          <button class="btn btn-red" style="padding:9px 18px;font-size:12px" onclick="addToCart('Abonnement Pro',39)">Ajouter</button>
+        </div>
+      </div>
     </div>
+    <div class="product-card" data-category="abonnement" data-name="abonnement elite">
+      <img class="product-img" src="https://picsum.photos/seed/gym3/400/200" alt="Elite">
+      <div class="product-body">
+        <div class="product-category">Abonnement</div>
+        <div class="product-name">Elite</div>
+        <p class="product-desc">Tout inclus + coach dédié + accès Basic Fit illimité</p>
+        <div class="product-footer">
+          <div class="product-price">69€<small>/mois</small></div>
+          <button class="btn btn-red" style="padding:9px 18px;font-size:12px" onclick="addToCart('Abonnement Elite',69)">Ajouter</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" data-category="programme" data-name="programme masse musculation">
+      <img class="product-img" src="https://picsum.photos/seed/muscle/400/200" alt="Masse">
+      <div class="product-body">
+        <div class="product-category">Programme</div>
+        <div class="product-name">Programme Masse</div>
+        <p class="product-desc">Plan 12 semaines prise de masse — PDF + vidéos</p>
+        <div class="product-footer">
+          <div class="product-price">24€</div>
+          <button class="btn btn-red" style="padding:9px 18px;font-size:12px" onclick="addToCart('Programme Masse',24)">Ajouter</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" data-category="programme" data-name="programme football">
+      <img class="product-img" src="https://picsum.photos/seed/football/400/200" alt="Football">
+      <div class="product-body">
+        <div class="product-category">Programme</div>
+        <div class="product-name">Programme Football</div>
+        <p class="product-desc">Plan 8 semaines préparation physique footballeur</p>
+        <div class="product-footer">
+          <div class="product-price">24€</div>
+          <button class="btn btn-red" style="padding:9px 18px;font-size:12px" onclick="addToCart('Programme Football',24)">Ajouter</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" data-category="programme" data-name="programme seche définition">
+      <img class="product-img" src="https://picsum.photos/seed/seche/400/200" alt="Sèche">
+      <div class="product-body">
+        <div class="product-category">Programme</div>
+        <div class="product-name">Programme Sèche</div>
+        <p class="product-desc">Plan 10 semaines sèche & définition + nutrition incluse</p>
+        <div class="product-footer">
+          <div class="product-price">24€</div>
+          <button class="btn btn-red" style="padding:9px 18px;font-size:12px" onclick="addToCart('Programme Sèche',24)">Ajouter</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" data-category="equipement" data-name="maillot elite vêtement">
+      <img class="product-img" src="https://picsum.photos/seed/maillot/400/200" alt="Maillot">
+      <div class="product-body">
+        <div class="product-category">Équipement</div>
+        <div class="product-name">Maillot Elite</div>
+        <p class="product-desc">Maillot technique respirant — 4 coloris disponibles</p>
+        <div class="product-footer">
+          <div class="product-price">49€</div>
+          <button class="btn btn-red" style="padding:9px 18px;font-size:12px" onclick="addToCart('Maillot Elite',49)">Ajouter</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" data-category="equipement" data-name="haltères pro musculation poids">
+      <img class="product-img" src="https://picsum.photos/seed/halteres/400/200" alt="Haltères">
+      <div class="product-body">
+        <div class="product-category">Équipement</div>
+        <div class="product-name">Haltères Pro</div>
+        <p class="product-desc">Paire hexagonaux 10kg — revêtement caoutchouc anti-dérapant</p>
+        <div class="product-footer">
+          <div class="product-price">79€</div>
+          <button class="btn btn-red" style="padding:9px 18px;font-size:12px" onclick="addToCart('Haltères Pro',79)">Ajouter</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" data-category="equipement" data-name="kit sportpro tenue complète">
+      <img class="product-img" src="https://picsum.photos/seed/kit/400/200" alt="Kit">
+      <div class="product-body">
+        <div class="product-category">Équipement</div>
+        <div class="product-name">Kit SportPro</div>
+        <p class="product-desc">Maillot + short + chaussettes — la tenue complète</p>
+        <div class="product-footer">
+          <div class="product-price">99€</div>
+          <button class="btn btn-red" style="padding:9px 18px;font-size:12px" onclick="addToCart('Kit SportPro',99)">Ajouter</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <h3>Panier</h3>
-    <ul id="cart"></ul>
-    <p>Total : <span id="total">0</span> €</p>
+  <div class="cart-section">
+    <h3>🛒 Mon Panier</h3>
+    <ul id="cart"><li class="cart-empty-msg">Ton panier est vide</li></ul>
+    <div class="cart-total">Total <span id="total">0 €</span></div>
+    <button class="paypal-btn" onclick="payWithPaypal()" id="paypal-btn" disabled>
+      <svg height="20" viewBox="0 0 101 32" xmlns="http://www.w3.org/2000/svg"><path fill="#003087" d="M12.237 2.8L5.887 23.5H.79L7.14 2.8h5.097zm23.845 0l-6.35 20.7h-5.097l6.35-20.7h5.097zM46.69 2.8l-3.6 12.4c-.9 3.1-3.4 5.3-6.6 5.3H31.9l-1.5 3h10.2c5.7 0 10.5-3.8 12-9.3l3.6-11.4H46.69z"/><path fill="#009cde" d="M22.087 2.8H16.99l-6.35 20.7h5.097l3.2-10.4h3.15c2.7 0 4.9 2 4.9 4.7 0 2.6-2.2 4.7-4.9 4.7H18.99l-1.4 5h3.497c5.5 0 9.9-4.4 9.9-9.8 0-5.5-4.4-14.9-8.9-14.9z"/></svg>
+      Payer avec PayPal
+    </button>
+    <p class="secure-note">🔒 Paiement 100% sécurisé via PayPal</p>
+  </div>
 </section>
+</div>
+
+<!-- ══════════════ PAGE CONTACT ══════════════ -->
+</div>
+</div>
+
+<button id="back-to-top" aria-label="Retour en haut">&#8679;</button>
+<div id="toast-container"></div>
 
 <script src="script.js"></script>
 </body>
