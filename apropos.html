@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SportPro - A propos - Partenaire officiel Basic Fit">
+<title>SportPro - A propos</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=EUR"></script>
+</head>
+<body>
+<header id="site-header">
+  <div class="logo"><a href="index.html" style="text-decoration:none;color:inherit;">SPORT<span class="red">PRO</span></a></div>
+  <button class="hamburger" id="hamburger-btn" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div class="nav-overlay" id="nav-overlay" onclick="closeMenu()"></div>
+  <nav id="main-nav">
+    <a href="index.html">Accueil</a>
+    <a href="musculation.html">Musculation</a>
+    <a href="football.html">Football</a>
+    <a href="apropos.html">A propos</a>
+    <a href="conseils.html">Conseils</a>
+    <a href="boutique.html">Boutique</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="content">
+  <p class="section-label">Qui sommes-nous ?</p>
+  <h2 class="section-title">Notre équipe</h2>
+  <p style="font-size:16px;color:#555;max-width:700px;line-height:1.8;margin-bottom:44px;">SportPro est né en 2020 de la passion de trois coaches certifiés pour le sport de performance. Aujourd'hui partenaires officiels de Basic Fit, nous accompagnons plus de <strong>2 000 sportifs</strong> en France dans leur progression.</p>
+
+  <div class="team-grid">
+    <div class="coach-card">
+      <div class="coach-img-placeholder">💪</div>
+      <div class="coach-info">
+        <div class="coach-name">Lucas Moreau</div>
+        <div class="coach-role">Coach Musculation — Fondateur</div>
+        <p class="coach-bio">Ancien athlète de powerlifting, Lucas a remporté le championnat régional FFHMFAC en 2018. Certifié BPJEPS AF, il accompagne ses clients depuis 8 ans.</p>
+        <div class="coach-tags"><span class="coach-tag">Prise de masse</span><span class="coach-tag">Force</span><span class="coach-tag">Nutrition</span></div>
+      </div>
+    </div>
+    <div class="coach-card">
+      <div class="coach-img-placeholder">⚽</div>
+      <div class="coach-info">
+        <div class="coach-name">Karim Aït-Saïd</div>
+        <div class="coach-role">Coach Football — Préparateur physique</div>
+        <p class="coach-bio">Ex-joueur de N2, Karim est diplômé UEFA B et préparateur physique certifié. Il a travaillé 4 ans avec des clubs de football professionnels.</p>
+        <div class="coach-tags"><span class="coach-tag">Explosivité</span><span class="coach-tag">Tactique</span><span class="coach-tag">HIIT</span></div>
+      </div>
+    </div>
+    <div class="coach-card">
+      <div class="coach-img-placeholder">🥗</div>
+      <div class="coach-info">
+        <div class="coach-name">Inès Bernard</div>
+        <div class="coach-role">Nutritionniste sportive</div>
+        <p class="coach-bio">Diplômée en nutrition du sport à l'Université de Lyon, Inès est spécialisée dans les stratégies alimentaires pour la performance et la récupération.</p>
+        <div class="coach-tags"><span class="coach-tag">Nutrition</span><span class="coach-tag">Récupération</span><span class="coach-tag">Sèche</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:60px;">
+    <p class="section-label">En chiffres</p>
+    <h3 class="section-title" style="font-size:36px;margin-bottom:24px;">SportPro aujourd'hui</h3>
+    <div class="grid grid-4">
+      <div class="info-card" style="text-align:center;border-left:none;border-top:4px solid var(--red);">
+        <div style="font-family:'Bebas Neue',cursive;font-size:52px;color:var(--red);line-height:1;">2 000+</div>
+        <p>Sportifs accompagnés</p>
+      </div>
+      <div class="info-card" style="text-align:center;border-left:none;border-top:4px solid var(--red);">
+        <div style="font-family:'Bebas Neue',cursive;font-size:52px;color:var(--red);line-height:1;">700+</div>
+        <p>Salles Basic Fit partenaires</p>
+      </div>
+      <div class="info-card" style="text-align:center;border-left:none;border-top:4px solid var(--red);">
+        <div style="font-family:'Bebas Neue',cursive;font-size:52px;color:var(--red);line-height:1;">15</div>
+        <p>Coaches certifiés</p>
+      </div>
+      <div class="info-card" style="text-align:center;border-left:none;border-top:4px solid var(--red);">
+        <div style="font-family:'Bebas Neue',cursive;font-size:52px;color:var(--red);line-height:1;">4.9★</div>
+        <p>Note moyenne clients</p>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ══════════════ PAGE BLOG / CONSEILS ══════════════ -->
+</div>
+</div>
+
+<button id="back-to-top" aria-label="Retour en haut">&#8679;</button>
+<div id="toast-container"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

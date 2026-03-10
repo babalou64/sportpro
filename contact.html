@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SportPro - Contact - Partenaire officiel Basic Fit">
+<title>SportPro - Contact</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=EUR"></script>
+</head>
+<body>
+<header id="site-header">
+  <div class="logo"><a href="index.html" style="text-decoration:none;color:inherit;">SPORT<span class="red">PRO</span></a></div>
+  <button class="hamburger" id="hamburger-btn" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div class="nav-overlay" id="nav-overlay" onclick="closeMenu()"></div>
+  <nav id="main-nav">
+    <a href="index.html">Accueil</a>
+    <a href="musculation.html">Musculation</a>
+    <a href="football.html">Football</a>
+    <a href="apropos.html">A propos</a>
+    <a href="conseils.html">Conseils</a>
+    <a href="boutique.html">Boutique</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="content">
+  <p class="section-label">On est là pour toi</p>
+  <h2 class="section-title">Contact & Newsletter</h2>
+  <div class="contact-grid">
+    <div class="form-box">
+      <h3>Nous contacter</h3>
+      <p>Une question sur nos programmes, un partenariat ou besoin d'un devis ? Écris-nous !</p>
+      <div class="form-row">
+        <div class="form-group"><label>Prénom</label><input type="text" placeholder="Lucas"></div>
+        <div class="form-group"><label>Nom</label><input type="text" placeholder="Moreau"></div>
+      </div>
+      <div class="form-group"><label>Email</label><input type="email" placeholder="lucas@email.com"></div>
+      <div class="form-group">
+        <label>Sujet</label>
+        <select>
+          <option>Question sur un programme</option>
+          <option>Abonnement / tarifs</option>
+          <option>Partenariat Basic Fit</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Message</label><textarea rows="4" placeholder="Dis-nous tout..."></textarea></div>
+      <button class="btn btn-red" style="width:100%;padding:14px" onclick="submitForm('contact-success')">Envoyer le message</button>
+      <div class="form-success" id="contact-success">✅ Message envoyé ! On te répond sous 24h.</div>
+    </div>
+
+    <div class="form-box">
+      <h3>Newsletter</h3>
+      <p>Reçois chaque semaine nos conseils sport, nutrition et les offres exclusives SportPro directement dans ta boîte mail.</p>
+      <div class="form-group" style="margin-top:24px;"><label>Prénom</label><input type="text" placeholder="Ton prénom"></div>
+      <div class="form-group"><label>Email</label><input type="email" placeholder="ton@email.com"></div>
+      <div class="form-group">
+        <label>Je m'intéresse à</label>
+        <select>
+          <option>Musculation & Nutrition</option>
+          <option>Football & Prépa physique</option>
+          <option>Tout à la fois !</option>
+        </select>
+      </div>
+      <button class="btn btn-red" style="width:100%;padding:14px;margin-top:10px" onclick="submitForm('newsletter-success')">S'abonner à la newsletter</button>
+      <div class="form-success" id="newsletter-success">🎉 Bienvenue dans la famille SportPro !</div>
+      <p style="font-size:12px;color:#aaa;margin-top:14px;">En t'inscrivant tu acceptes de recevoir nos emails. Désabonnement possible à tout moment.</p>
+    </div>
+  </div>
+</section>
+</div>
+</div>
+</div>
+
+<button id="back-to-top" aria-label="Retour en haut">&#8679;</button>
+<div id="toast-container"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
