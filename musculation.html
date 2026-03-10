@@ -2,29 +2,59 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SportPro - Musculation - Partenaire officiel Basic Fit">
 <title>SportPro - Musculation</title>
 <link rel="stylesheet" href="style.css">
+<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=EUR"></script>
 </head>
 <body>
-
-<header>
-    <div class="logo">SPORT<span class="red">PRO</span></div>
-    <nav>
-        <a href="index.html">Accueil</a>
-        <a href="musculation.html">Musculation</a>
-        <a href="football.html">Football</a>
-        <a href="boutique.html">Boutique</a>
-    </nav>
+<header id="site-header">
+  <div class="logo"><a href="index.html" style="text-decoration:none;color:inherit;">SPORT<span class="red">PRO</span></a></div>
+  <button class="hamburger" id="hamburger-btn" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div class="nav-overlay" id="nav-overlay" onclick="closeMenu()"></div>
+  <nav id="main-nav">
+    <a href="index.html">Accueil</a>
+    <a href="musculation.html">Musculation</a>
+    <a href="football.html">Football</a>
+    <a href="apropos.html">A propos</a>
+    <a href="conseils.html">Conseils</a>
+    <a href="boutique.html">Boutique</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 </header>
 
 <section class="content">
-    <h2>Musculation</h2>
-    <p>Programmes pour prise de masse et force.</p>
-
-    <video controls width="500">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-    </video>
+  <p class="section-label">Programmes d'entraînement</p>
+  <h2 class="section-title">Musculation</h2>
+  <p style="font-size:16px;color:#555;max-width:680px;line-height:1.8;margin-bottom:30px;">Que tu vises la <strong>prise de masse</strong>, la <strong>force brute</strong> ou la <strong>définition musculaire</strong>, SportPro te propose des plans complets conçus par des coaches certifiés, disponibles dans les salles <strong>Basic Fit</strong> partenaires.</p>
+  <div class="video-wrap" style="width:100%;max-width:620px;"><video controls style="width:100%;display:block;"><source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"><source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">Ton navigateur ne supporte pas la vidéo.</video></div>
+  <p class="section-label" style="margin-top:50px;">Comment ça marche ?</p>
+  <h3 class="section-title" style="font-size:36px;margin-bottom:10px;">Ton programme en 4 étapes</h3>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div><h4>Évaluation de ton niveau</h4><p>Bilan physique complet : force, endurance, mobilité. Disponible en salle Basic Fit avec un coach SportPro.</p></div></div>
+    <div class="step"><div class="step-num">2</div><div><h4>Programme personnalisé</h4><p>Plan d'entraînement sur mesure — fréquence, exercices, séries, charges. Mis à jour chaque mois.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div><h4>Suivi nutritionnel</h4><p>Recommandations nutritionnelles claires et réalistes pour maximiser tes résultats.</p></div></div>
+    <div class="step"><div class="step-num">4</div><div><h4>Suivi & ajustements</h4><p>Point mensuel avec ton coach pour analyser tes résultats et ajuster le programme.</p></div></div>
+  </div>
+  <div class="grid grid-3" style="margin-top:44px;">
+    <div class="info-card"><div class="icon">💪</div><h3>Prise de masse</h3><p>Programme 4j/semaine axé sur les mouvements composés : squat, développé couché, tractions, soulevé de terre.</p></div>
+    <div class="info-card"><div class="icon">🔥</div><h3>Sèche & définition</h3><p>Circuit training + cardio HIIT pour brûler les graisses tout en conservant le muscle.</p></div>
+    <div class="info-card"><div class="icon">🏆</div><h3>Force maximale</h3><p>Programme de powerlifting pour augmenter tes 1RM. Pour les sportifs avancés.</p></div>
+  </div>
+  <div class="bf-banner">
+    <div><h2>Disponible en <span>Basic Fit</span></h2><p>Tous nos programmes musculation sont accessibles dans les 700+ salles Basic Fit en France. Nos coaches sont présents les lundi, mercredi et vendredi matin.</p><button class="btn btn-red" style="margin-top:16px" onclick="showPage('boutique')">S'abonner maintenant</button></div>
+    <div class="bf-big-icon">🏋️</div>
+  </div>
 </section>
+</div>
+
+<!-- ══════════════ PAGE FOOTBALL ══════════════ -->
+</div>
+</div>
+
+<button id="back-to-top" aria-label="Retour en haut">&#8679;</button>
+<div id="toast-container"></div>
 
 <script src="script.js"></script>
 </body>
