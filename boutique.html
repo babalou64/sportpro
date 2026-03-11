@@ -1,173 +1,138 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="SportPro - Boutique - Partenaire officiel Basic Fit">
-<title>SportPro - Boutique</title>
+<meta name="description" content="SportShop - Acheter programmes et equipements">
+<title>SportShop - Boutique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=EUR"></script>
 </head>
 <body>
 <header id="site-header">
-  <div class="logo"><a href="index.html" style="text-decoration:none;color:inherit;">SPORT<span class="red">PRO</span></a></div>
-  <button class="hamburger" id="hamburger-btn" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+  <a class="logo" href="index.html">Sport<span>Shop</span><small>Excellence &amp; Performance</small></a>
+  <button class="hamburger" id="hamburger-btn" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   <div class="nav-overlay" id="nav-overlay" onclick="closeMenu()"></div>
   <nav id="main-nav">
     <a href="index.html">Accueil</a>
     <a href="musculation.html">Musculation</a>
     <a href="football.html">Football</a>
-    <a href="apropos.html">A propos</a>
+    <a href="apropos.html">Equipe</a>
     <a href="conseils.html">Conseils</a>
     <a href="boutique.html">Boutique</a>
+    <a href="suivi.html">Suivi</a>
+    <a href="faq.html">FAQ</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
-
 <section class="content">
-  <p class="section-label">Nos produits & services</p>
-  <h2 class="section-title">Boutique</h2>
-
+  <p class="section-eyebrow">Telechargement immediat apres paiement</p>
+  <h2 class="section-title">La <em>Boutique</em></h2>
   <div class="shop-filters">
-    <input type="text" class="search-bar" placeholder="🔍  Rechercher un produit..." oninput="filterProducts(this.value)">
+    <input type="text" class="search-bar" placeholder="Rechercher un produit..." oninput="filterProducts(this.value)">
     <button class="filter-btn active" onclick="filterCategory('all',this)">Tout</button>
     <button class="filter-btn" onclick="filterCategory('abonnement',this)">Abonnements</button>
-    <button class="filter-btn" onclick="filterCategory('programme',this)">Programmes</button>
-    <button class="filter-btn" onclick="filterCategory('equipement',this)">Équipements</button>
+    <button class="filter-btn" onclick="filterCategory('programme',this)">Programmes PDF</button>
+    <button class="filter-btn" onclick="filterCategory('nutrition',this)">Nutrition PDF</button>
   </div>
-
   <div class="shop-grid" id="shop-grid">
-    <div class="product-card" data-category="abonnement" data-name="abonnement starter">
-      <img class="product-img" src="https://picsum.photos/seed/gym1/400/200" alt="Starter">
-      <div class="product-body">
-        <div class="product-category">Abonnement</div>
-        <div class="product-name">Starter</div>
-        <p class="product-desc">2 programmes + 1 session coach/mois en Basic Fit</p>
-        <div class="product-footer">
-          <div class="product-price">19€<small>/mois</small></div>
-          <button class="btn btn-red" style="padding:9px 18px;font-size:12px" onclick="addToCart('Abonnement Starter',19)">Ajouter</button>
-        </div>
-      </div>
-    </div>
-    <div class="product-card" data-category="abonnement" data-name="abonnement pro">
-      <img class="product-img" src="https://picsum.photos/seed/gym2/400/200" alt="Pro">
-      <div class="product-body">
-        <div class="product-category">Abonnement</div>
-        <div class="product-name">Pro</div>
-        <p class="product-desc">Programmes illimités + 4 sessions/mois + suivi nutritionnel</p>
-        <div class="product-footer">
-          <div class="product-price">39€<small>/mois</small></div>
-          <button class="btn btn-red" style="padding:9px 18px;font-size:12px" onclick="addToCart('Abonnement Pro',39)">Ajouter</button>
-        </div>
-      </div>
-    </div>
-    <div class="product-card" data-category="abonnement" data-name="abonnement elite">
-      <img class="product-img" src="https://picsum.photos/seed/gym3/400/200" alt="Elite">
-      <div class="product-body">
-        <div class="product-category">Abonnement</div>
-        <div class="product-name">Elite</div>
-        <p class="product-desc">Tout inclus + coach dédié + accès Basic Fit illimité</p>
-        <div class="product-footer">
-          <div class="product-price">69€<small>/mois</small></div>
-          <button class="btn btn-red" style="padding:9px 18px;font-size:12px" onclick="addToCart('Abonnement Elite',69)">Ajouter</button>
-        </div>
-      </div>
-    </div>
-    <div class="product-card" data-category="programme" data-name="programme masse musculation">
-      <img class="product-img" src="https://picsum.photos/seed/muscle/400/200" alt="Masse">
-      <div class="product-body">
-        <div class="product-category">Programme</div>
-        <div class="product-name">Programme Masse</div>
-        <p class="product-desc">Plan 12 semaines prise de masse — PDF + vidéos</p>
-        <div class="product-footer">
-          <div class="product-price">24€</div>
-          <button class="btn btn-red" style="padding:9px 18px;font-size:12px" onclick="addToCart('Programme Masse',24)">Ajouter</button>
-        </div>
-      </div>
-    </div>
-    <div class="product-card" data-category="programme" data-name="programme football">
-      <img class="product-img" src="https://picsum.photos/seed/football/400/200" alt="Football">
-      <div class="product-body">
-        <div class="product-category">Programme</div>
-        <div class="product-name">Programme Football</div>
-        <p class="product-desc">Plan 8 semaines préparation physique footballeur</p>
-        <div class="product-footer">
-          <div class="product-price">24€</div>
-          <button class="btn btn-red" style="padding:9px 18px;font-size:12px" onclick="addToCart('Programme Football',24)">Ajouter</button>
-        </div>
-      </div>
-    </div>
-    <div class="product-card" data-category="programme" data-name="programme seche définition">
-      <img class="product-img" src="https://picsum.photos/seed/seche/400/200" alt="Sèche">
-      <div class="product-body">
-        <div class="product-category">Programme</div>
-        <div class="product-name">Programme Sèche</div>
-        <p class="product-desc">Plan 10 semaines sèche & définition + nutrition incluse</p>
-        <div class="product-footer">
-          <div class="product-price">24€</div>
-          <button class="btn btn-red" style="padding:9px 18px;font-size:12px" onclick="addToCart('Programme Sèche',24)">Ajouter</button>
-        </div>
-      </div>
-    </div>
-    <div class="product-card" data-category="equipement" data-name="maillot elite vêtement">
-      <img class="product-img" src="https://picsum.photos/seed/maillot/400/200" alt="Maillot">
-      <div class="product-body">
-        <div class="product-category">Équipement</div>
-        <div class="product-name">Maillot Elite</div>
-        <p class="product-desc">Maillot technique respirant — 4 coloris disponibles</p>
-        <div class="product-footer">
-          <div class="product-price">49€</div>
-          <button class="btn btn-red" style="padding:9px 18px;font-size:12px" onclick="addToCart('Maillot Elite',49)">Ajouter</button>
-        </div>
-      </div>
-    </div>
-    <div class="product-card" data-category="equipement" data-name="haltères pro musculation poids">
-      <img class="product-img" src="https://picsum.photos/seed/halteres/400/200" alt="Haltères">
-      <div class="product-body">
-        <div class="product-category">Équipement</div>
-        <div class="product-name">Haltères Pro</div>
-        <p class="product-desc">Paire hexagonaux 10kg — revêtement caoutchouc anti-dérapant</p>
-        <div class="product-footer">
-          <div class="product-price">79€</div>
-          <button class="btn btn-red" style="padding:9px 18px;font-size:12px" onclick="addToCart('Haltères Pro',79)">Ajouter</button>
-        </div>
-      </div>
-    </div>
-    <div class="product-card" data-category="equipement" data-name="kit sportpro tenue complète">
-      <img class="product-img" src="https://picsum.photos/seed/kit/400/200" alt="Kit">
-      <div class="product-body">
-        <div class="product-category">Équipement</div>
-        <div class="product-name">Kit SportPro</div>
-        <p class="product-desc">Maillot + short + chaussettes — la tenue complète</p>
-        <div class="product-footer">
-          <div class="product-price">99€</div>
-          <button class="btn btn-red" style="padding:9px 18px;font-size:12px" onclick="addToCart('Kit SportPro',99)">Ajouter</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="cart-section">
-    <h3>🛒 Mon Panier</h3>
-    <ul id="cart"><li class="cart-empty-msg">Ton panier est vide</li></ul>
-    <div class="cart-total">Total <span id="total">0 €</span></div>
-    <button class="paypal-btn" onclick="payWithPaypal()" id="paypal-btn" disabled>
-      <svg height="20" viewBox="0 0 101 32" xmlns="http://www.w3.org/2000/svg"><path fill="#003087" d="M12.237 2.8L5.887 23.5H.79L7.14 2.8h5.097zm23.845 0l-6.35 20.7h-5.097l6.35-20.7h5.097zM46.69 2.8l-3.6 12.4c-.9 3.1-3.4 5.3-6.6 5.3H31.9l-1.5 3h10.2c5.7 0 10.5-3.8 12-9.3l3.6-11.4H46.69z"/><path fill="#009cde" d="M22.087 2.8H16.99l-6.35 20.7h5.097l3.2-10.4h3.15c2.7 0 4.9 2 4.9 4.7 0 2.6-2.2 4.7-4.9 4.7H18.99l-1.4 5h3.497c5.5 0 9.9-4.4 9.9-9.8 0-5.5-4.4-14.9-8.9-14.9z"/></svg>
-      Payer avec PayPal
-    </button>
-    <p class="secure-note">🔒 Paiement 100% sécurisé via PayPal</p>
+    <!-- ABONNEMENTS BASIC FIT -->
+    <div class="product-card" data-category="abonnement" data-name="abonnement basic fit mensuel">
+      <div class="product-badge">Populaire</div>
+      <div class="product-thumb"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=180&fit=crop" alt="Basic-Fit Mensuel"></div>
+      <div class="product-body">
+        <div class="product-cat">Abonnement</div>
+        <div class="product-name">Basic-Fit Mensuel</div>
+        <p class="product-desc">Acces a 700+ salles Basic-Fit partout en France. Sans engagement. Activation sous 24h.</p>
+        <div class="product-footer"><div class="product-price">29<small>EUR/mois</small></div><button class="btn btn-gold" style="padding:10px 18px;font-size:10px" onclick="addToCart('Basic-Fit Mensuel',29)">Ajouter</button></div>
+      </div>
+    </div>
+
+    <div class="product-card" data-category="abonnement" data-name="basic fit annuel premium">
+      <div class="product-badge">-20%</div>
+      <div class="product-thumb"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&h=180&fit=crop" alt="Basic-Fit Annuel"></div>
+      <div class="product-body">
+        <div class="product-cat">Abonnement</div>
+        <div class="product-name">Basic-Fit Annuel</div>
+        <p class="product-desc">12 mois d acces illimite. Economisez 20% par rapport au mensuel. Activation sous 24h.</p>
+        <div class="product-footer"><div class="product-price">279<small>EUR/an</small></div><button class="btn btn-gold" style="padding:10px 18px;font-size:10px" onclick="addToCart('Basic-Fit Annuel',279)">Ajouter</button></div>
+      </div>
+    </div>
+
+    <!-- PROGRAMMES PDF -->
+    <div class="product-card" data-category="programme" data-name="programme musculation debutant pdf">
+      <div class="product-badge">PDF instant</div>
+      <div class="product-thumb"><img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=400&h=180&fit=crop" alt="Programme Debutant"></div>
+      <div class="product-body">
+        <div class="product-cat">Programme PDF</div>
+        <div class="product-name">Musculation Debutant</div>
+        <p class="product-desc">4 semaines pour apprendre les bases. Exercices, nutrition et carnet de progression inclus. Telechargement immediat.</p>
+        <div class="product-footer"><div class="product-price">19.99<small>EUR</small></div><button class="btn btn-gold" style="padding:10px 18px;font-size:10px" onclick="addToCart('Programme Debutant',19.99)">Ajouter</button></div>
+      </div>
+    </div>
+
+    <div class="product-card" data-category="programme" data-name="programme musculation intermediaire pdf">
+      <div class="product-badge">PDF instant</div>
+      <div class="product-thumb"><img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=400&h=180&fit=crop" alt="Programme Intermediaire"></div>
+      <div class="product-body">
+        <div class="product-cat">Programme PDF</div>
+        <div class="product-name">Musculation Intermediaire</div>
+        <p class="product-desc">4 semaines en split 4 jours. Pour ceux qui s entrainent depuis 3-6 mois. Telechargement immediat.</p>
+        <div class="product-footer"><div class="product-price">24.99<small>EUR</small></div><button class="btn btn-gold" style="padding:10px 18px;font-size:10px" onclick="addToCart('Programme Intermediaire',24.99)">Ajouter</button></div>
+      </div>
+    </div>
+
+    <div class="product-card" data-category="programme" data-name="programme musculation competition avance pdf">
+      <div class="product-badge">PDF instant</div>
+      <div class="product-thumb"><img src="https://images.unsplash.com/photo-1533681904393-9ab6eee7e408?w=400&h=180&fit=crop" alt="Programme Competition"></div>
+      <div class="product-body">
+        <div class="product-cat">Programme PDF</div>
+        <div class="product-name">Musculation Competition</div>
+        <p class="product-desc">4 semaines a haute intensite. Periodisation, techniques avancees et nutrition elite. Telechargement immediat.</p>
+        <div class="product-footer"><div class="product-price">34.99<small>EUR</small></div><button class="btn btn-gold" style="padding:10px 18px;font-size:10px" onclick="addToCart('Programme Competition',34.99)">Ajouter</button></div>
+      </div>
+    </div>
+
+    <!-- NUTRITION PDF -->
+    <div class="product-card" data-category="nutrition" data-name="guide nutrition sport pdf">
+      <div class="product-badge">PDF instant</div>
+      <div class="product-thumb"><img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=180&fit=crop" alt="Guide Nutrition"></div>
+      <div class="product-body">
+        <div class="product-cat">Nutrition PDF</div>
+        <div class="product-name">Guide Nutrition Sport</div>
+        <p class="product-desc">Meal prep, macros, timing des repas. Tout ce qu il faut savoir pour manger comme un athlete. Telechargement immediat.</p>
+        <div class="product-footer"><div class="product-price">19.99<small>EUR</small></div><button class="btn btn-gold" style="padding:10px 18px;font-size:10px" onclick="addToCart('Guide Nutrition',19.99)">Ajouter</button></div>
+      </div>
+    </div>
+
+  </div>
+  <div class="cart-wrap">
+    <div class="cart-section">
+      <h3>Mon Panier</h3>
+      <div class="form-group" style="margin-bottom:16px;">
+        <label style="display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--grey);margin-bottom:8px;">Votre email (pour recevoir le PDF)</label>
+        <input type="email" id="client-email" placeholder="votre@email.com" style="width:100%;padding:12px 16px;background:var(--bg3);border:1px solid var(--border);color:var(--white);font-family:DM Sans,sans-serif;font-size:14px;outline:none;">
+      </div>
+      <ul id="cart"><li class="cart-empty-msg">Votre panier est vide</li></ul>
+      <div class="cart-total">Total <span id="total">0 EUR</span></div>
+      <button class="paypal-btn" onclick="loadPaypalAndPay()" id="paypal-btn" disabled>Payer avec PayPal</button>
+      <div id="paypal-button-container" style="margin-top:12px;display:none;"></div>
+      <p class="secure-note">Paiement securise PayPal — PDF envoye automatiquement par email</p>
+    </div>
+    <div class="cart-info-box">
+      <div class="cart-info-item"><h4>Livraison</h4><p>Livraison offerte des 60 EUR. Expedition sous 24-48h ouvres.</p></div>
+      <div class="cart-info-item"><h4>Retours</h4><p>Satisfait ou rembourse sous 30 jours. Retours gratuits.</p></div>
+      <div class="cart-info-item"><h4>Support</h4><p>Notre equipe repond en moins de 2h en semaine.</p></div>
+    </div>
   </div>
 </section>
-</div>
-
-<!-- ══════════════ PAGE CONTACT ══════════════ -->
-</div>
-</div>
-
-<button id="back-to-top" aria-label="Retour en haut">&#8679;</button>
+<footer><div class="footer-bottom" style="justify-content:center;"><p>2025 <span>SportShop</span></p></div></footer>
+<button id="back-to-top">&#8593;</button>
 <div id="toast-container"></div>
-
 <script src="script.js"></script>
 </body>
 </html>
+
+
